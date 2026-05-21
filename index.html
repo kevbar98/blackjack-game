@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Blackjack</title>
+  </head>
+  <body>
+    <main>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 1</h2>
+        <p class="score" id="score--1">0</p>
+        <div class="hand hand--1">
+          <div class="hand-inner"></div>
+        </div>
+      </section>
+
+      <!-- ÁREA CENTRAL DEL JUEGO -->
+      <div class="game-area">
+        <div class="controls-top">
+          <button class="btn btn--new">🔄 New Game</button>
+        </div>
+
+        <div class="card-area">
+          <img src="assets/card-back-design.png" alt="" class="card hidden" />
+        </div>
+
+        <div class="controls-bottom">
+          <button class="btn btn--draw">🃏 Draw Card</button>
+          <button class="btn btn--pass">📥 Pass</button>
+        </div>
+      </div>
+
+      <section class="player player--2">
+        <h2 class="name" id="name--2">Player 2</h2>
+        <p class="score" id="score--2">0</p>
+        <div class="hand hand--2">
+          <div class="hand-inner"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

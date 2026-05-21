@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+/* LAYOUT */
+/* ------ NUEVO LAYOUT FLEXIBLE ------ */
+
+main {
+  position: relative;
+  width: 90vw;
+  min-height: 90vh;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Botón superior */
+.controls-top {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+/* Carta centrada SIEMPRE */
+.card-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Botones inferiores */
+.controls-bottom {
+  flex-shrink: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* Tamaño seguro para carta */
+.card {
+  width: 17vw;
+  max-width: 250px;
+}
+
+.hidden {
+  display: none;
+}
+
+.player {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: clamp(4rem, 6vw, 8rem);
+  font-weight: 300;
+  color: #c7365f;
+  margin-bottom: auto;
+}
+
+.hand {
+  position: relative;
+  width: 100%;
+  height: 45%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hand-inner {
+  position: relative;
+  height: 100%;
+}
+
+.card-ui {
+  position: absolute;
+  width: clamp(70px, 8vw, 130px);
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+}
+
+.card-ui img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  min-width: clamp(120px, 15vw, 200px);
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    height: auto;
+  }
+
+  .player {
+    padding: 2rem;
+  }
+
+  .game-area {
+    padding: 3rem 1rem;
+  }
+
+  .controls-bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 35vw;
+  }
+}
